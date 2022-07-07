@@ -5,4 +5,5 @@ import androidx.lifecycle.ViewModel
 class MainViewModel : ViewModel() {
     private var name = String()
     private val age =Int
+
     }

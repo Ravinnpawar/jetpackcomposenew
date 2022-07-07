@@ -8,6 +8,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 
 class SecondActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,11 +23,19 @@ class SecondActivity : ComponentActivity() {
         Scaffold(topBar = {
             TopAppBar(title = {
                 Text(
-                    "GFG | Second Activity",
+                    "PrAndroid | Second Activity",
                     color = Color.White
                 )
             }, backgroundColor = Color(0xff0f9d58))
         },content = {})
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+    @Preview
+    @Composable
+    private fun displayPreview(){
+        MainContent()
+    }
 }

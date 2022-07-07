@@ -33,20 +33,24 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     private fun App() {
+        var name1: String=""
+       /* var age1:Int=0
+        var country :String?=null
+        var enabled =Boolean*/
         val click = ClickCount()
         Column {
             TopAppBar(
                 title = { Text(text = "Pets Show", color = Color.White) },
                 backgroundColor = Color.Blue
             )
-            Text(text = "Hey Ravindra")
+            Text(text = "Hey $name1=Ravindra")
             Text(text = "How are you?")
             val context = LocalContext.current
-            OutlinedButton(
+            Button(
                 onClick = {
-                    click.count++
+                    click.count=click.count++
                     Toast.makeText(context, "Hello Toast Showing message", Toast.LENGTH_LONG).show();
-                    context.startActivity(Intent(context, SecondActivity::class.java))
+                    //context.startActivity(Intent(context, SecondActivity::class.java))
                 },
 
                 shape = RoundedCornerShape(20.dp),
@@ -82,7 +86,7 @@ class MainActivity : ComponentActivity() {
             App()
         }
     }
-
+    //@Model
     class ClickCount(var count: Int = 0) {
 
     }
